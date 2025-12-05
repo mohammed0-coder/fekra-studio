@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="title">فِكرة ستوديو | تصميم وهويات بصرية فاخرة</title>
+    <meta name="description" content="وكالة تصميم مواقع وهويات بصرية فاخرة، متخصصون في تحويل الفكرة إلى هوية لا تُنسى.">
+    <meta name="keywords" content="تصميم مواقع, هوية بصرية, براندنج, لوكجري, وكالة تصميم">
+    <meta property="og:title" content="فِكرة ستوديو | تصميم وهويات بصرية فاخرة">
+    <meta property="og:description" content="نحوّل الفكرة إلى هوية لا تُنسى.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://i.postimg.cc/ncDY1skn/fkrh-hwyh.jpg" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=El+Messiri:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* تعريف الخطوط والاستايلات الأساسية للـ Luxury Minimal */
+        :root {
+            --color-primary: #000000;
+            --color-secondary: #ffffff;
+            --font-display: 'El Messiri', serif;
+            --font-body: 'Cairo', sans-serif;
+        }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            overflow-x: hidden;
+            /* تنسيق الكلام: خط Cairo خفيف للنصوص العادية */
+            font-weight: 300; 
+        }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .header-scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+        .luxury-border {
+            border-image: linear-gradient(to right, #ffffff, transparent) 1;
+            border-bottom: 1px solid;
+        }
+        .bg-pattern-dark {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        /* تنسيق خاص لزر اللغة ليكون متناسقاً */
+        .lang-dropdown-button {
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 12px; /* مساحة مناسبة */
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.05); /* خلفية خفيفة */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 400; /* خط متوسط للوضوح */
+        }
+        .lang-dropdown-button:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        .lang-menu-style {
+            background-color: #1a1a1a; /* خلفية داكنة للقائمة المنسدلة */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .lang-option {
+            font-weight: 300;
+            padding: 8px 16px;
+        }
+        /* تحسين الخطوط والتنسيق للنصوص العادية */
+        .text-gray-300, .text-gray-400 {
+            font-weight: 300; /* جعل النصوص الخفيفة أكثر أناقة */
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJd/HlYc9A2eEwUeK2H+BvC78pY6E50qG/n7P8C/HhBf0eR+M/2n8A9R5iQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="bg-black text-white antialiased">
+
+    <header id="header" class="fixed top-0 w-full z-50 transition duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
+            
+            <button id="menu-button" class="lg:hidden p-2 rounded-full border border-white focus:outline-none z-50 order-3">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <a href="#hero" class="flex items-center space-x-2 order-2 mx-auto lg:mx-0">
+                <img src="https://i.postimg.cc/ncDY1skn/fkrh-hwyh.jpg" alt="شعار فِكرة ستوديو" class="h-10 lg:h-14 w-auto">
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-6 space-x-reverse order-1">
+                
+                <nav class="space-x-8 space-x-reverse text-lg font-light">
+                    <a href="#hero" class="hover:text-gray-300 transition-colors" data-lang-key="nav_home">الرئيسية</a>
+                    <a href="#about" class="hover:text-gray-300 transition-colors" data-lang-key="nav_about">من نحن</a>
+                    <a href="#services" class="hover:text-gray-300 transition-colors" data-lang-key="nav_services">خدماتنا</a>
+                    <a href="#contact" class="hover:text-gray-300 transition-colors" data-lang-key="nav_contact">تواصل</a>
+                </nav>
+
+                <a href="#contact" class="bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 shadow-xl" data-lang-key="cta_start">
+                    ابدأ مشروعك
+                </a>
+            </div>
+
+            <div class="relative group order-3 hidden lg:block">
+                <button id="lang-toggle" class="lang-dropdown-button text-white text-sm">
+                    <i class="fas fa-globe ml-2"></i> <span id="current-lang-text">العربية</span>
+                </button>
+                <div id="lang-menu" class="lang-menu-style absolute right-0 mt-2 w-32 rounded-lg shadow-xl hidden group-hover:block transition-all duration-300 origin-top-right">
+                    <button class="lang-option w-full text-right hover:bg-gray-700 rounded-t-lg" data-lang="ar">العربية</button>
+                    <button class="lang-option w-full text-right hover:bg-gray-700" data-lang="en">English</button>
+                    <button class="lang-option w-full text-right hover:bg-gray-700 rounded-b-lg" data-lang="fr">Français</button>
+                </div>
+            </div>
+
+            <div class="relative group order-1 lg:hidden">
+                 <button id="lang-toggle-mobile" class="lang-dropdown-button text-white text-sm">
+                    <i class="fas fa-globe ml-1"></i>
+                </button>
+                <div id="lang-menu-mobile" class="lang-menu-style absolute left-0 mt-2 w-32 rounded-lg shadow-xl hidden transition-all duration-300 origin-top-left">
+                    <button class="lang-option w-full text-left hover:bg-gray-700 rounded-t-lg" data-lang="ar">العربية</button>
+                    <button class="lang-option w-full text-left hover:bg-gray-700" data-lang="en">English</button>
+                    <button class="lang-option w-full text-left hover:bg-gray-700 rounded-b-lg" data-lang="fr">Français</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-40 flex flex-col justify-center items-center text-2xl space-y-8">
+            <a href="#hero" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_home">الرئيسية</a>
+            <a href="#about" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_about">من نحن</a>
+            <a href="#services" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_services">خدماتنا</a>
+            <a href="#contact" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_contact">تواصل</a>
+            <a href="#contact" class="mt-8 bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition-colors shadow-xl" data-lang-key="cta_start">
+                ابدأ مشروعك
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-black min-h-screen flex items-center bg-pattern-dark pt-24 lg:pt-0">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <img id="hero-logo" src="https://i.postimg.cc/ncDY1skn/fkrh-hwyh.jpg" alt="شعار فِكرة ستوديو" class="w-28 lg:w-40 mx-auto mb-8 opacity-0">
+
+                <h1 id="hero-headline" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 opacity-0 leading-tight tracking-wider" data-lang-key="hero_headline">
+                    نحوّل الفكرة إلى هوية لا تُنسى
+                </h1>
+
+                <p id="hero-subtext" class="text-xl sm:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto font-light opacity-0" data-lang-key="hero_subtext">
+                    نصمّم مواقع وهويات بصرية فاخرة بخبرةٍ وتقنيةٍ عالية — أسود × أبيض، بساطة تليق بالفخامة.
+                </p>
+
+                <div id="hero-ctas" class="flex justify-center opacity-0">
+                    <a href="#contact" class="cta-primary bg-white text-black text-lg font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition-all duration-300 shadow-xl transform hover:scale-105" data-lang-key="cta_start">
+                        ابدأ مشروعك
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 lg:py-32 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+                <h2 class="text-3xl lg:text-5xl mb-12 text-center luxury-border pb-4" data-lang-key="about_title">فِكرة: الفخامة في البساطة</h2>
+                <div class="flex flex-col lg:flex-row items-center lg:items-start space-y-12 lg:space-y-0 lg:space-x-16 lg:space-x-reverse">
+                    <div class="lg:w-2/3 space-y-6 text-lg text-gray-200">
+                        <p data-lang-key="about_p1">
+                            فِكرة هي وكالة تصميم وهويات بصرية متخصصة في تحويل الأفكار إلى علامات راقية. نحن نؤمن بأن الأناقة الحقيقية تكمن في البساطة والدقة المتناهية، ولهذا يركز عملنا على إزالة الفوضى وتقديم حلول بصرية تتحدث عن التميز.
+                        </p>
+                        <p data-lang-key="about_p2">
+                            نحن لا نصمّم فقط، بل نبني نظاماً متكاملاً للعلامة التجارية يضمن لها ظهوراً مؤثراً ومتسقاً عبر جميع المنصات الرقمية والمطبوعة، مستهدفين عملاء النخبة وحزم الخدمات الراقية (Luxury packages).
+                        </p>
+                    </div>
+                    <div class="lg:w-1/3">
+                        <h3 class="text-2xl mb-4" data-lang-key="values_title">قيمنا الجوهرية</h3>
+                        <ul class="space-y-3 text-lg">
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-gem text-white"></i>
+                                <span data-lang-key="value_1">الجودة والدقة المتناهية</span>
+                            </li>
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-magic text-white"></i>
+                                <span data-lang-key="value_2">الإبداع والتفرد البصري</span>
+                            </li>
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-leaf text-white"></i>
+                                <span data-lang-key="value_3">البساطة والأناقة المينيمالية</span>
+                            </li>
+                            <li class="flex items-center space-x-3 space-x-reverse">
+                                <i class="fas fa-handshake text-white"></i>
+                                <span data-lang-key="value_4">الالتزام والشفافية التامة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 lg:py-32 bg-gray-900 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl lg:text-5xl mb-16 text-center text-white luxury-border pb-4" data-lang-key="services_title">تصميم يرفع علامتك</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="service-card p-6 rounded-xl border border-gray-800 bg-black transition duration-300 hover:bg-gray-800 hover:shadow-2xl">
+                        <div class="text-4xl mb-4 text-white">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-lang-key="service_1_title">تصميم وتطوير المواقع</h3>
+                        <p class="text-sm text-gray-400" data-lang-key="service_1_desc">
+                            بناء واجهات مستخدم (UI/UX) متطورة وبرمجة مواقع مخصصة تعكس فخامة علامتك وتعمل بكفاءة على جميع الأجهزة.
+                        </p>
+                    </div>
+
+                    <div class="service-card p-6 rounded-xl border border-gray-800 bg-black transition duration-300 hover:bg-gray-800 hover:shadow-2xl">
+                        <div class="text-4xl mb-4 text-white">
+                            <i class="fas fa-bezier-curve"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-lang-key="service_2_title">بناء الهوية البصرية</h3>
+                        <p class="text-sm text-gray-400" data-lang-key="service_2_desc">
+                            تصميم الشعارات، الألوان، الخطوط، وتطوير دليل شامل للعلامة التجارية (Brand Guidelines) لضمان الاتساق.
+                        </p>
+                    </div>
+
+                    <div class="service-card p-6 rounded-xl border border-gray-800 bg-black transition duration-300 hover:bg-gray-800 hover:shadow-2xl">
+                        <div class="text-4xl mb-4 text-white">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-lang-key="service_3_title">المواد المطبوعة والدعائية</h3>
+                        <p class="text-sm text-gray-400" data-lang-key="service_3_desc">
+                            تصميم بطاقات العمل الفاخرة، ملفات الشركة، والبروشورات التي تترك انطباعاً دائماً.
+                        </p>
+                    </div>
+
+                    <div class="service-card p-6 rounded-xl border border-gray-800 bg-black transition duration-300 hover:bg-gray-800 hover:shadow-2xl">
+                        <div class="text-4xl mb-4 text-white">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" data-lang-key="service_4_title">إدارة الظهور الرقمي</h3>
+                        <p class="text-sm text-gray-400" data-lang-key="service_4_desc">
+                            تصميم الموك-أب (Mockups) والجرافيكس الخاصة بالسوشيال ميديا لتعزيز حضور علامتك الأنيق عبر الإنترنت.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="py-20 lg:py-32 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                <h2 class="text-3xl lg:text-5xl mb-16 text-center luxury-border pb-4" data-lang-key="process_title">رحلة التصميم: محترفون في بناء العلامات الراقية</h2>
+
+                <div class="relative">
+                    <div class="hidden md:block absolute right-1/2 transform translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
+
+                    <div class="space-y-16">
+                        
+                        <div class="relative process-step flex items-start">
+                            <div class="absolute right-0 md:right-1/2 md:transform md:translate-x-1/2 
+                                        p-4 bg-gray-800 rounded-full border border-gray-600 w-12 h-12 flex items-center justify-center z-10">
+                                <i class="fas fa-lightbulb text-xl text-white"></i>
+                            </div>
+                            
+                            <div class="w-full pr-16 md:pr-0 md:w-1/2 md:text-right md:order-1 md:ml-auto">
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="step_1_title">1. الفكرة والإحاطة</h3>
+                                <p class="text-gray-400" data-lang-key="step_1_desc">
+                                    نبدأ بالاستماع العميق لفكرتك، وتحليل السوق والمنافسين لتحديد التميز.
+                                </p>
+                            </div>
+
+                            <div class="hidden md:block md:w-1/2 md:order-2"></div>
+                        </div>
+
+                        <div class="relative process-step flex items-start">
+                            <div class="absolute right-0 md:right-1/2 md:transform md:translate-x-1/2 
+                                        p-4 bg-gray-800 rounded-full border border-gray-600 w-12 h-12 flex items-center justify-center z-10">
+                                <i class="fas fa-drafting-compass text-xl text-white"></i>
+                            </div>
+
+                            <div class="w-full pr-16 md:pr-0 md:w-1/2 md:text-left md:order-2 md:mr-auto md:pl-12">
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="step_2_title">2. التصور والهيكلة</h3>
+                                <p class="text-gray-400" data-lang-key="step_2_desc">
+                                    وضع التصورات الأولية، ورسم الهياكل السلكية (Wireframes) لضمان أفضل تجربة مستخدم.
+                                </p>
+                            </div>
+
+                            <div class="hidden md:block md:w-1/2 md:order-1"></div>
+                        </div>
+
+                        <div class="relative process-step flex items-start">
+                            <div class="absolute right-0 md:right-1/2 md:transform md:translate-x-1/2 
+                                        p-4 bg-gray-800 rounded-full border border-gray-600 w-12 h-12 flex items-center justify-center z-10">
+                                <i class="fas fa-palette text-xl text-white"></i>
+                            </div>
+                            
+                            <div class="w-full pr-16 md:pr-0 md:w-1/2 md:text-right md:order-1 md:ml-auto">
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="step_3_title">3. التصميم البصري</h3>
+                                <p class="text-gray-400" data-lang-key="step_3_desc">
+                                    تطبيق الهوية البصرية، وتصميم الواجهات الجذابة (UI Design) بلمسة فاخرة.
+                                </p>
+                            </div>
+
+                            <div class="hidden md:block md:w-1/2 md:order-2"></div>
+                        </div>
+
+                         <div class="relative process-step flex items-start">
+                            <div class="absolute right-0 md:right-1/2 md:transform md:translate-x-1/2 
+                                        p-4 bg-gray-800 rounded-full border border-gray-600 w-12 h-12 flex items-center justify-center z-10">
+                                <i class="fas fa-code text-xl text-white"></i>
+                            </div>
+
+                            <div class="w-full pr-16 md:pr-0 md:w-1/2 md:text-left md:order-2 md:mr-auto md:pl-12">
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="step_4_title">4. التنفيذ والبرمجة</h3>
+                                <p class="text-gray-400" data-lang-key="step_4_desc">
+                                    تحويل التصميم إلى كود نظيف، متجاوب، ومحسّن للأداء (تطوير المواقع).
+                                </p>
+                            </div>
+
+                            <div class="hidden md:block md:w-1/2 md:order-1"></div>
+                        </div>
+
+                         <div class="relative process-step flex items-start">
+                            <div class="absolute right-0 md:right-1/2 md:transform md:translate-x-1/2 
+                                        p-4 bg-gray-800 rounded-full border border-gray-600 w-12 h-12 flex items-center justify-center z-10">
+                                <i class="fas fa-rocket text-xl text-white"></i>
+                            </div>
+                            
+                            <div class="w-full pr-16 md:pr-0 md:w-1/2 md:text-right md:order-1 md:ml-auto">
+                                <h3 class="text-2xl font-bold mb-2" data-lang-key="step_5_title">5. التسليم والإطلاق</h3>
+                                <p class="text-gray-400" data-lang-key="step_5_desc">
+                                    فحص شامل، إطلاق المشروع، وتوفير الدعم الفني لضمان نجاح علامتك.
+                                </p>
+                            </div>
+
+                            <div class="hidden md:block md:w-1/2 md:order-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 lg:py-32 section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                <h2 class="text-3xl lg:text-5xl mb-16 text-center luxury-border pb-4" data-lang-key="contact_title">هل لديك مشروع؟ دعنا نبدأ</h2>
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                    <div>
+                        <p class="text-xl mb-8 text-gray-300" data-lang-key="contact_intro">
+                            تواصل معنا الآن عبر واتساب أو البريد الإلكتروني. نعدك برد سريع ومناقشة تفصيلية لفكرتك.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <i class="fas fa-envelope text-2xl text-white mt-1"></i>
+                                <div>
+                                    <p class="font-bold" data-lang-key="contact_email_label">البريد الإلكتروني</p>
+                                    <a href="mailto: fekrastudios8@gmail.com" class="text-gray-400 hover:text-white transition-colors">fekrastudios8@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                                <i class="fas fa-phone text-2xl text-white mt-1"></i>
+                                <div>
+                                    <p class="font-bold" data-lang-key="contact_phone_label">رقم الهاتف (واتساب)</p>
+                                    <a href="https://wa.me/201279929897" target="_blank" class="text-gray-400 hover:text-white transition-colors">01279929897</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 space-x-reverse">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-center items-center p-8 bg-gray-900 border border-gray-800 rounded-xl shadow-2xl">
+                        <p class="text-2xl text-center mb-6 font-bold" data-lang-key="contact_direct_cta_title">
+                            تواصل مباشرةً لبدء مشروعك
+                        </p>
+                        <p class="text-gray-400 text-center mb-8" data-lang-key="contact_direct_cta_desc">
+                            انقر أدناه لبدء محادثة فورية معنا عبر واتساب لمناقشة التفاصيل.
+                        </p>
+                        
+                        <a href="https://wa.me/201279929897?text=مرحباً%20فِكرة%20ستوديو،%20أود%20بدء%20مشروع%20جديد." 
+                           target="_blank" 
+                           class="inline-flex items-center justify-center w-full bg-green-500 text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-green-600 transition-all duration-300 transform hover:scale-[1.01] shadow-xl">
+                            <i class="fab fa-whatsapp ml-2 text-2xl"></i> 
+                            <span data-lang-key="cta_whatsapp_start">ابدأ المحادثة الآن</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-6 md:space-y-0">
+                <div class="flex flex-col items-center md:items-start space-y-3">
+                    <img src="https://i.postimg.cc/ncDY1skn/fkrh-hwyh.jpg" alt="شعار فِكرة ستوديو" class="h-8 w-auto mb-2">
+                    <p data-lang-key="footer_rights">&copy; <span id="current-year"></span> فِكرة ستوديو - جميع الحقوق محفوظة.</p>
+                </div>
+
+                <nav class="flex space-x-6 space-x-reverse">
+                    <a href="#about" class="hover:text-white transition-colors" data-lang-key="nav_about">من نحن</a>
+                    <a href="#services" class="hover:text-white transition-colors" data-lang-key="nav_services">الخدمات</a>
+                </nav>
+
+                <div class="flex space-x-4 space-x-reverse text-xl">
+                    <a href="https://www.facebook.com/profile.php?id=61584332285991" class="hover:text-white transition-colors" aria-label="انستجرام"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/fekra3325?igsh=enY1dWg2NjBpNDVt" class="hover:text-white transition-colors" aria-label="تويتر"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/201279929897" target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl transition-transform duration-300 hover:scale-110" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+
+    <script>
+        // === بيانات متعددة اللغات (Localization Data) ===
+        const translations = {
+            'ar': {
+                'title': 'فِكرة ستوديو | تصميم وهويات بصرية فاخرة',
+                // Navigation
+                'nav_home': 'الرئيسية',
+                'nav_about': 'من نحن',
+                'nav_services': 'خدماتنا',
+                 'nav_contact': 'تواصل',
+                // CTA
+                'cta_start': 'ابدأ مشروعك',
+                // Hero
+                'hero_headline': 'نحوّل الفكرة إلى هوية لا تُنسى',
+                'hero_subtext': 'نصمّم مواقع وهويات بصرية فاخرة بخبرةٍ وتقنيةٍ عالية — أسود × أبيض، بساطة تليق بالفخامة.',
+                // About
+                'about_title': 'فِكرة: الفخامة في البساطة',
+                'about_p1': 'فِكرة هي وكالة تصميم وهويات بصرية متخصصة في تحويل الأفكار إلى علامات راقية. نحن نؤمن بأن الأناقة الحقيقية تكمن في البساطة والدقة المتناهية، ولهذا يركز عملنا على إزالة الفوضى وتقديم حلول بصرية تتحدث عن التميز.',
+                'about_p2': 'نحن لا نصمّم فقط، بل نبني نظاماً متكاملاً للعلامة التجارية يضمن لها ظهوراً مؤثراً ومتسقاً عبر جميع المنصات الرقمية والمطبوعة، مستهدفين عملاء النخبة وحزم الخدمات الراقية (Luxury packages).',
+                'values_title': 'قيمنا الجوهرية',
+                'value_1': 'الجودة والدقة المتناهية',
+                'value_2': 'الإبداع والتفرد البصري',
+                'value_3': 'البساطة والأناقة المينيمالية',
+                'value_4': 'الالتزام والشفافية التامة',
+                // Services
+                'services_title': 'تصميم يرفع علامتك',
+                'service_1_title': 'تصميم وتطوير المواقع',
+                'service_1_desc': 'بناء واجهات مستخدم (UI/UX) متطورة وبرمجة مواقع مخصصة تعكس فخامة علامتك وتعمل بكفاءة على جميع الأجهزة.',
+                'service_2_title': 'بناء الهوية البصرية',
+                'service_2_desc': 'تصميم الشعارات، الألوان، الخطوط، وتطوير دليل شامل للعلامة التجارية (Brand Guidelines) لضمان الاتساق.',
+                'service_3_title': 'المواد المطبوعة والدعائية',
+                'service_3_desc': 'تصميم بطاقات العمل الفاخرة، ملفات الشركة، والبروشورات التي تترك انطباعاً دائماً.',
+                'service_4_title': 'إدارة الظهور الرقمي',
+                'service_4_desc': 'تصميم الموك-أب (Mockups) والجرافيكس الخاصة بالسوشيال ميديا لتعزيز حضور علامتك الأنيق عبر الإنترنت.',
+                // Process
+                'process_title': 'رحلة التصميم: محترفون في بناء العلامات الراقية',
+                'step_1_title': '1. الفكرة والإحاطة',
+                'step_1_desc': 'نبدأ بالاستماع العميق لفكرتك، وتحليل السوق والمنافسين لتحديد التميز.',
+                'step_2_title': '2. التصور والهيكلة',
+                'step_2_desc': 'وضع التصورات الأولية، ورسم الهياكل السلكية (Wireframes) لضمان أفضل تجربة مستخدم.',
+                'step_3_title': '3. التصميم البصري',
+                'step_3_desc': 'تطبيق الهوية البصرية، وتصميم الواجهات الجذابة (UI Design) بلمسة فاخرة.',
+                'step_4_title': '4. التنفيذ والبرمجة',
+                'step_4_desc': 'تحويل التصميم إلى كود نظيف، متجاوب، ومحسّن للأداء (تطوير المواقع).',
+                'step_5_title': '5. التسليم والإطلاق',
+                'step_5_desc': 'فحص شامل، إطلاق المشروع، وتوفير الدعم الفني لضمان نجاح علامتك.',
+                
+                // Contact
+                'contact_title': 'هل لديك مشروع؟ دعنا نبدأ',
+                'contact_intro': 'تواصل معنا الآن عبر واتساب أو البريد الإلكتروني. نعدك برد سريع ومناقشة تفصيلية لفكرتك.',
+                'contact_email_label': 'البريد الإلكتروني',
+                'contact_phone_label': 'رقم الهاتف (واتساب)',
+                'contact_direct_cta_title': 'تواصل مباشرةً لبدء مشروعك',
+                'contact_direct_cta_desc': 'انقر أدناه لبدء محادثة فورية معنا عبر واتساب لمناقشة التفاصيل.',
+                'cta_whatsapp_start': 'ابدأ المحادثة الآن',
+                // Footer
+                'footer_rights': '© <span id="current-year"></span> فِكرة ستوديو - جميع الحقوق محفوظة.',
+            },
+            'en': {
+                'title': 'FEKRA Studio | Luxury Design & Visual Identity',
+                // Navigation
+                'nav_home': 'Home',
+                'nav_about': 'About Us',
+                'nav_services': 'Services',
+                'nav_contact': 'Contact',
+                // CTA
+                'cta_start': 'Start Your Project',
+                // Hero
+                'hero_headline': 'Transforming Ideas into Unforgettable Identities',
+                'hero_subtext': 'We design luxury websites and visual identities with high expertise and technology — Black × White, simplicity that suits luxury.',
+                // About
+                'about_title': 'FEKRA: Luxury in Simplicity',
+                'about_p1': 'FEKRA is a specialized design and visual identity agency focused on elevating ideas into sophisticated brands. We believe true elegance lies in meticulous simplicity, which is why our work focuses on removing clutter and delivering visual solutions that speak of excellence.',
+                'about_p2': 'We don\'t just design; we build a complete brand system that ensures an impactful and consistent presence across all digital and printed platforms, targeting elite clients and luxury service packages.',
+                'values_title': 'Our Core Values',
+                'value_1': 'Quality and Precision',
+                'value_2': 'Creativity and Visual Uniqueness',
+                'value_3': 'Simplicity and Minimal Elegance',
+                'value_4': 'Commitment and Full Transparency',
+                // Services
+                'services_title': 'Design That Elevates Your Brand',
+                'service_1_title': 'Website Design and Development',
+                'service_1_desc': 'Building sophisticated UI/UX and custom web development that reflects your brand\'s luxury and performs efficiently on all devices.',
+                'service_2_title': 'Visual Identity Creation',
+                'service_2_desc': 'Logo design, color palettes, typography, and developing comprehensive Brand Guidelines to ensure consistency.',
+                'service_3_title': 'Printed and Promotional Materials',
+                'service_3_desc': 'Designing luxury business cards, company profiles, and brochures that leave a lasting impression.',
+                'service_4_title': 'Digital Presence Management',
+                'service_4_desc': 'Designing mockups and social media graphics to enhance your elegant online presence.',
+                // Process
+                'process_title': 'The Design Journey: Professionals in Building High-End Brands',
+                'step_1_title': '1. Idea and Briefing',
+                'step_1_desc': 'We begin with deep listening to your idea, analyzing the market and competitors to define excellence.',
+                'step_2_title': '2. Visualization and Structuring',
+                'step_2_desc': 'Establishing initial concepts and drafting wireframes to ensure the best user experience.',
+                'step_3_title': '3. Visual Design',
+                'step_3_desc': 'Applying the visual identity and designing attractive interfaces (UI Design) with a luxury touch.',
+                'step_4_title': '4. Implementation and Development',
+                'step_4_desc': 'Converting the design into clean, responsive code, optimized for performance (website development).',
+                'step_5_title': '5. Delivery and Launch',
+                'step_5_desc': 'Comprehensive testing, project launch, and technical support to ensure your brand\'s success.',
+                // Contact
+                'contact_title': 'Got a Project? Let\'s Get Started',
+                'contact_intro': 'Contact us now via WhatsApp or email. We promise a quick response and detailed discussion of your idea.',
+                'contact_email_label': 'Email Address',
+                'contact_phone_label': 'Phone (WhatsApp)',
+                'contact_address_label': 'FEKRA Office',
+                'contact_address_location': 'Middle East, Headquarters (Available by appointment)',
+                'contact_direct_cta_title': 'Contact Directly to Start Your Project',
+                'contact_direct_cta_desc': 'Click below to start an instant conversation with us via WhatsApp to discuss the details.',
+                'cta_whatsapp_start': 'Start Chat Now',
+                // Footer
+                'footer_rights': '© <span id="current-year"></span> FEKRA Studio - All Rights Reserved.',
+            },
+            'fr': {
+                'title': 'FEKRA Studio | Design de Luxe & Identité Visuelle',
+                // Navigation
+                'nav_home': 'Accueil',
+                'nav_about': 'À Propos',
+                'nav_services': 'Services',
+                'nav_contact': 'Contact',
+                // CTA
+                'cta_start': 'Démarrer Votre Projet',
+                // Hero
+                'hero_headline': 'Transformer les Idées en Identités Inoubliables',
+                'hero_subtext': 'Nous concevons des sites web et des identités visuelles de luxe avec une expertise et une technologie de pointe — Noir × Blanc, la simplicité qui sied au luxe.',
+                // About
+                'about_title': 'FEKRA: Le Luxe dans la Simplicité',
+                'about_p1': 'FEKRA est une agence spécialisée en design et identité visuelle axée sur l\'élévation des idées en marques sophistiquées. Nous croyons que la véritable élégance réside dans la simplicité méticuleuse, c\'est pourquoi notre travail se concentre sur l\'élimination de l\'encombrement pour offrir des solutions visuelles synonymes d\'excellence.',
+                'about_p2': 'Nous ne faisons que concevoir; nous construisons un système de marque complet qui assure une présence percutante et cohérente sur toutes les plateformes numériques et imprimées, ciblant une clientèle d\'élite et des forfaits de services haut de gamme (Luxury packages).',
+                'values_title': 'Nos Valeurs Fondamentales',
+                'value_1': 'Qualité et Précision Absolues',
+                'value_2': 'Créativité et Singularité Visuelle',
+                'value_3': 'Simplicité et Élégance Minimale',
+                'value_4': 'Engagement et Transparence Totale',
+                // Services
+                'services_title': 'Un Design Qui Élève Votre Marque',
+                'service_1_title': 'Conception et Développement de Sites Web',
+                'service_1_desc': 'Création d\'interfaces utilisateur (UI/UX) sophistiquées et développement web sur mesure qui reflètent le luxe de votre marque et fonctionnent efficacement sur tous les appareils.',
+                'service_2_title': 'Création d\'Identité Visuelle',
+                'service_2_desc': 'Conception de logos, palettes de couleurs, typographie et développement d\'un guide de marque complet pour assurer la cohérence.',
+                'service_3_title': 'Matériaux Imprimés et Promotionnels',
+                'service_3_desc': 'Conception de cartes de visite de luxe, de profils d\'entreprise et de brochures qui laissent une impression durable.',
+                'service_4_title': 'Gestion de la Présence Numérique',
+                'service_4_desc': 'Conception de maquettes et de graphiques pour les médias sociaux afin d\'améliorer votre présence en ligne élégante.',
+                // Process
+                'process_title': 'Le Parcours de Conception: Professionnels de la Construction de Marques Haut de Gamme',
+                'step_1_title': '1. Idée et Briefing',
+                'step_1_desc': 'Nous commençons par une écoute approfondية de votre idée, analysant le marché et les concurrents pour définir l\'excellence.',
+                'step_2_title': '2. Visualisation et Structuration',
+                'step_2_desc': 'Établissement des concepts initiaux et rédaction des maquettes (Wireframes) pour garantir la meilleure expérience utilisateur.',
+                'step_3_title': '3. Design Visuel',
+                'step_3_desc': 'Application de l\'identité visuelle et conception d\'interfaces attrayantes (UI Design) avec une touche de luxe.',
+                'step_4_title': '4. Mise en Œuvre et Développement',
+                'step_4_desc': 'Conversion du design en code propre et réactif, optimisé pour la performance (développement de sites web).',
+                'step_5_title': '5. Livraison et Lancement',
+                'step_5_desc': 'Tests completس، lancement du projet et support technique pour assurer le succès de votre marque.',
+                // Contact
+                'contact_title': 'Vous Avez un Projet? Commençons!',
+                'contact_intro': 'Contactez-nous maintenant via WhatsApp ou email. Nous vous promettons une réponse rapide et une discussion détaillée de votre idée.',
+                'contact_email_label': 'Adresse E-mail',
+                'contact_phone_label': 'Téléphone (WhatsApp)',
+                'contact_address_label': 'Bureau FEKRA',
+                'contact_address_location': 'Moyen-الشرق الأوسط، Siège Social (Disponible sur rendez-vous)',
+                'contact_direct_cta_title': 'Contactez Directement pour Démarrer Votre Projet',
+                'contact_direct_cta_desc': 'Cliquez ci-dessous pour démarrer une conversation instantanée avec nous via WhatsApp pour discuter des détails.',
+                'cta_whatsapp_start': 'Démarrer la Discussion Maintenant',
+                // Footer
+                'footer_rights': '© <span id="current-year"></span> FEKRA Studio - Tous Droits Réservés.',
+            }
+        };
+
+        let currentLang = 'ar';
+
+        // 1. إعداد العام (السنة الحالية)
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 2. تحديث نصوص الموقع حسب اللغة
+        function setLanguage(lang) {
+            currentLang = lang;
+            const langData = translations[lang];
+
+            // 1. تحديث الاتجاه (RTL/LTR)
+            const htmlElement = document.documentElement;
+            const bodyElement = document.body;
+            htmlElement.lang = lang;
+            
+            if (lang === 'ar') {
+                htmlElement.dir = 'rtl';
+                bodyElement.classList.add('rtl');
+                bodyElement.classList.remove('ltr');
+            } else {
+                htmlElement.dir = 'ltr';
+                bodyElement.classList.add('ltr');
+                bodyElement.classList.remove('rtl');
+            }
+            
+            // 2. تحديث جميع العناصر بناءً على 'data-lang-key'
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (langData[key]) {
+                    if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+                        el.setAttribute('placeholder', langData[key]);
+                    } else if (el.tagName === 'TEXTAREA' && el.hasAttribute('placeholder')) {
+                        el.setAttribute('placeholder', langData[key]);
+                    } else if (el.hasAttribute('data-lang-key') && el.tagName === 'TITLE') {
+                        document.title = langData[key];
+                    } else {
+                        el.innerHTML = langData[key];
+                    }
+                }
+            });
+
+             // 3. تحديث نص زر اللغة
+            document.getElementById('current-lang-text').textContent = 
+                lang === 'ar' ? 'العربية' : lang === 'en' ? 'English' : 'Français';
+            
+            // تحديث نص زر اللغة للموبايل
+            document.getElementById('lang-toggle-mobile').innerHTML = `<i class="fas fa-globe ${lang === 'ar' ? 'ml-1' : 'mr-1'}"></i>`;
+        }
+
+        // 3. تفعيل القائمة المتجاوبة (Hamburger Menu)
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuItems = document.querySelectorAll('.menu-item');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+            menuButton.querySelector('i').className = isMenuOpen ? 'fas fa-times text-xl' : 'fas fa-bars text-xl';
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+        menuItems.forEach(item => item.addEventListener('click', toggleMenu));
+
+        // 4. منطق تبديل اللغة
+        document.querySelectorAll('.lang-option').forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                setLanguage(lang);
+                // إخفاء القوائم المنسدلة
+                document.getElementById('lang-menu').classList.add('hidden');
+                document.getElementById('lang-menu-mobile').classList.add('hidden');
+            });
+        });
+
+        // إظهار وإخفاء قائمة اللغات (Desktop)
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            document.getElementById('lang-menu').classList.toggle('hidden');
+        });
+
+        // إظهار وإخفاء قائمة اللغات (Mobile)
+        document.getElementById('lang-toggle-mobile').addEventListener('click', () => {
+            document.getElementById('lang-menu-mobile').classList.toggle('hidden');
+        });
+
+        // إخفاء القائمة المنسدلة عند النقر خارجها
+        document.addEventListener('click', (event) => {
+            const langToggle = document.getElementById('lang-toggle');
+            const langMenu = document.getElementById('lang-menu');
+            const langToggleMobile = document.getElementById('lang-toggle-mobile');
+            const langMenuMobile = document.getElementById('lang-menu-mobile');
+
+            if (!langToggle.contains(event.target) && !langMenu.contains(event.target)) {
+                langMenu.classList.add('hidden');
+            }
+            if (!langToggleMobile.contains(event.target) && !langMenuMobile.contains(event.target)) {
+                langMenuMobile.classList.add('hidden');
+            }
+        });
+
+
+        // 5. تغيير شكل الهيدر عند التمرير
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // 6. GSAP: أنيميشن دخول قسم Hero
+        gsap.registerPlugin(ScrollTrigger);
+
+        function initializeHeroAnimation() {
+            const tl = gsap.timeline({ defaults: { duration: 1.5, ease: "power3.out" } });
+
+            tl.to("#hero-logo", { opacity: 1, y: 0, duration: 1 })
+              .to("#hero-headline", { opacity: 1, y: 0, duration: 1.2, delay: -0.8, stagger: 0.05 })
+              .to("#hero-subtext", { opacity: 1, y: 0, duration: 1, delay: -0.8 })
+              .to("#hero-ctas", { opacity: 1, y: 0, duration: 1, delay: -0.7 });
+
+            // تعيين الحالة الأولية لجميع العناصر في الهيرو
+            gsap.set(["#hero-logo", "#hero-headline", "#hero-subtext", "#hero-ctas"], { y: 20, opacity: 0 });
+        }
+
+        // 7. GSAP ScrollTrigger: أنيميشن ظهور الأقسام (Section Reveal)
+        document.querySelectorAll('.section-reveal').forEach((section) => {
+            gsap.from(section.children, {
+                opacity: 0,
+                y: 50,
+                stagger: 0.2,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // 8. أنيميشن ظهور خطوات العملية (Process Steps)
+        document.querySelectorAll('.process-step').forEach((step, index) => {
+            gsap.from(step, {
+                opacity: 0,
+                x: index % 2 === 0 ? 100 : -100,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: step,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+
+        // 9. أنيميشن Hover على بطاقات الخدمات
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, { scale: 1.03, duration: 0.3, ease: "power1.out" });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { scale: 1, duration: 0.3, ease: "power1.out" });
+            });
+        });
+
+        // تشغيل أنيميشن الـ Hero وتعيين اللغة الافتراضية (العربية)
+        window.addEventListener('load', () => {
+            setLanguage('ar'); // تعيين اللغة الافتراضية
+            initializeHeroAnimation();
+        });
+    </script>
+</body>
+</html>
