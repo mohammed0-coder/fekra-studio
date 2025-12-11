@@ -103,6 +103,7 @@
                     <a href="#hero" class="hover:text-gray-300 transition-colors" data-lang-key="nav_home">الرئيسية</a>
                     <a href="#about" class="hover:text-gray-300 transition-colors" data-lang-key="nav_about">من نحن</a>
                     <a href="#services" class="hover:text-gray-300 transition-colors" data-lang-key="nav_services">خدماتنا</a>
+                    <a href="#pricing" class="hover:text-gray-300 transition-colors" data-lang-key="nav_pricing">الخطط والأسعار</a>
                     <a href="#contact" class="hover:text-gray-300 transition-colors" data-lang-key="nav_contact">تواصل</a>
                 </nav>
 
@@ -139,6 +140,7 @@
             <a href="#hero" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_home">الرئيسية</a>
             <a href="#about" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_about">من نحن</a>
             <a href="#services" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_services">خدماتنا</a>
+            <a href="#pricing" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_pricing">الخطط والأسعار</a>
             <a href="#contact" class="menu-item block hover:text-gray-400 transition-colors" data-lang-key="nav_contact">تواصل</a>
             <a href="#contact" class="mt-8 bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition-colors shadow-xl" data-lang-key="cta_start">
                 ابدأ مشروعك
@@ -252,6 +254,129 @@
             </div>
         </section>
 
+        <section id="pricing" class="py-20 lg:py-32 bg-black section-reveal">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl lg:text-5xl mb-16 text-center text-white luxury-border pb-4" data-lang-key="pricing_title">باقات التصميم الراقية</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <div class="pricing-card p-8 rounded-xl border border-gray-800 bg-gray-900 transition duration-300 hover:bg-gray-800 hover:shadow-2xl flex flex-col">
+                        <p class="text-xs tracking-widest uppercase text-gray-400 mb-2" data-lang-key="plan_basic_label">الأفضل للبدء</p>
+                        <h3 class="text-3xl font-bold mb-4" data-lang-key="plan_basic_title">الخطة الأساسية</h3>
+                        
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold" data-lang-key="plan_basic_price">650</span>
+                            <span class="text-xl text-gray-400 mr-1" data-lang-key="plan_currency">جنيه</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-300 mb-6 flex-grow" data-lang-key="plan_basic_desc_intro">
+                            مناسب لـ: الشركات الناشئة أو الأفراد اللي عايزين بداية احترافية.
+                        </p>
+
+                        <ul class="space-y-3 mb-8 text-gray-200 text-sm">
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-white mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_basic_f1">تصميم لوجو احترافي (مع 3 نماذج)</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-white mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_basic_f2">كارت شخصي أو بطاقة تعريفية</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-white mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_basic_f3">صفحة هبوط بسيطة (Landing Page)</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-auto">
+                            <p class="text-xs text-gray-400 mb-4" data-lang-key="plan_basic_duration">المدة: 5 أيام عمل</p>
+                            <button onclick="sendWhatsAppMessage('basic')" class="w-full block text-center border border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300" data-lang-key="cta_choose_plan">
+                                اختر هذه الخطة
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card p-8 rounded-xl border-2 border-white bg-black transition duration-300 shadow-xl relative flex flex-col">
+                        <div class="absolute top-0 right-0 -mt-4 -mr-4 bg-white text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider" data-lang-key="plan_popular_badge">الأكثر شعبية</div>
+                        
+                        <p class="text-xs tracking-widest uppercase text-gray-400 mb-2" data-lang-key="plan_standard_label">هوية متكاملة</p>
+                        <h3 class="text-3xl font-bold mb-4" data-lang-key="plan_standard_title">الخطة المتوسطة</h3>
+                        
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-5xl font-extrabold text-white" data-lang-key="plan_standard_price">1800</span>
+                            <span class="text-xl text-gray-300 mr-1" data-lang-key="plan_currency">جنيه</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-300 mb-6 flex-grow" data-lang-key="plan_standard_desc_intro">
+                            مناسب لـ: الشركات الصغيرة والمتوسطة اللي عايزة هوية متكاملة وموقع عملي.
+                        </p>
+
+                        <ul class="space-y-3 mb-8 text-white text-sm">
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-green-400 mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_standard_f1">تصميم لوجو + باقة الهوية البصرية الكاملة</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-green-400 mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_standard_f2">موقع تعريفي صغير (4–5 صفحات)</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-green-400 mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_standard_f3">10 بوستات سوشيال + كتابة محتوى</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-green-400 mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_standard_f4">صفحة هبوط تسويقية (Landing Page)</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-auto">
+                            <p class="text-xs text-gray-400 mb-4" data-lang-key="plan_standard_duration">المدة: 10 أيام عمل</p>
+                            <button onclick="sendWhatsAppMessage('standard')" class="w-full block text-center bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-200 transition-all duration-300 shadow-xl" data-lang-key="cta_choose_plan">
+                                اختر هذه الخطة
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card p-8 rounded-xl border border-gray-800 bg-gray-900 transition duration-300 hover:bg-gray-800 hover:shadow-2xl flex flex-col">
+                        <p class="text-xs tracking-widest uppercase text-gray-400 mb-2" data-lang-key="plan_premium_label">الحلول الكاملة</p>
+                        <h3 class="text-3xl font-bold mb-4" data-lang-key="plan_premium_title">الخطة المتقدمة</h3>
+                        
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold" data-lang-key="plan_premium_price">3500</span>
+                            <span class="text-xl text-gray-400 mr-1" data-lang-key="plan_currency">جنيه</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-300 mb-6 flex-grow" data-lang-key="plan_premium_desc_intro">
+                            مناسب لـ: الشركات اللي عايزة حلول كاملة جاهزة للعرض والتسويق على السوشيال والويب.
+                        </p>
+
+                        <ul class="space-y-3 mb-8 text-gray-200 text-sm">
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-white mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_premium_f1">كل المزايا في الخطة المتوسطة</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-white mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_premium_f2">موقع كامل للشركة (حتى 10 صفحات)</span>
+                            </li>
+                            <li class="flex items-start space-x-3 space-x-reverse">
+                                <i class="fas fa-check-circle text-white mt-1 flex-shrink-0"></i>
+                                <span data-lang-key="plan_premium_f3">إدارة سوشيال لمدة شهر كامل (بوستات + ستوري + خطة نشر)</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-auto">
+                            <p class="text-xs text-gray-400 mb-4" data-lang-key="plan_premium_duration">المدة: 15 يوم عمل</p>
+                            <button onclick="sendWhatsAppMessage('premium')" class="w-full block text-center border border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300" data-lang-key="cta_choose_plan">
+                                اختر هذه الخطة
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
         <section id="process" class="py-20 lg:py-32 section-reveal">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                 <h2 class="text-3xl lg:text-5xl mb-16 text-center luxury-border pb-4" data-lang-key="process_title">رحلة التصميم: محترفون في بناء العلامات الراقية</h2>
@@ -429,6 +554,7 @@
                 'nav_home': 'الرئيسية',
                 'nav_about': 'من نحن',
                 'nav_services': 'خدماتنا',
+                'nav_pricing': 'الخطط والأسعار',
                  'nav_contact': 'تواصل',
                 // CTA
                 'cta_start': 'ابدأ مشروعك',
@@ -454,6 +580,47 @@
                 'service_3_desc': 'تصميم بطاقات العمل الفاخرة، ملفات الشركة، والبروشورات التي تترك انطباعاً دائماً.',
                 'service_4_title': 'إدارة الظهور الرقمي',
                 'service_4_desc': 'تصميم الموك-أب (Mockups) والجرافيكس الخاصة بالسوشيال ميديا لتعزيز حضور علامتك الأنيق عبر الإنترنت.',
+                // Pricing (New)
+                'pricing_title': 'باقات التصميم الراقية',
+                'plan_currency': 'جنيه',
+                'cta_choose_plan': 'اختر هذه الخطة',
+                
+                // General WhatsApp CTA
+                'whatsapp_message_intro': 'مرحباً فِكرة ستوديو، أنا مهتم بالعمل على مشروعي وأرغب في مناقشة تفاصيل ',
+
+                // Basic Plan
+                'plan_basic_title': 'الخطة الأساسية',
+                'plan_basic_label': 'الأفضل للبدء',
+                'plan_basic_name': 'الخطة الأساسية (Basic)', // Key for WhatsApp message
+                'plan_basic_price': '300',
+                'plan_basic_duration': 'المدة: 5 أيام عمل',
+                'plan_basic_desc_intro': 'مناسب لـ: الشركات الناشئة أو الأفراد اللي عايزين بداية احترافية.',
+                'plan_basic_f1': 'تصميم لوجو احترافي (مع 3 نماذج)',
+                'plan_basic_f2': 'كارت شخصي أو بطاقة تعريفية',
+                'plan_basic_f3': 'صفحة هبوط بسيطة (Landing Page)',
+                // Standard Plan
+                'plan_standard_title': 'الخطة المتوسطة',
+                'plan_standard_label': 'هوية متكاملة',
+                'plan_popular_badge': 'الأكثر شعبية',
+                'plan_standard_name': 'الخطة المتوسطة (Standard)', // Key for WhatsApp message
+                'plan_standard_price': '850',
+                'plan_standard_duration': 'المدة: 10 أيام عمل',
+                'plan_standard_desc_intro': 'مناسب لـ: الشركات الصغيرة والمتوسطة اللي عايزة هوية متكاملة وموقع عملي.',
+                'plan_standard_f1': 'تصميم لوجو + باقة الهوية البصرية الكاملة',
+                'plan_standard_f2': 'موقع تعريفي صغير (4–5 صفحات)',
+                'plan_standard_f3': '10 بوستات سوشيال + كتابة محتوى',
+                'plan_standard_f4': 'صفحة هبوط تسويقية (Landing Page)',
+                // Premium Plan
+                'plan_premium_title': 'الخطة المتقدمة',
+                'plan_premium_label': 'الحلول الكاملة',
+                'plan_premium_name': 'الخطة المتقدمة (Premium)', // Key for WhatsApp message
+                'plan_premium_price': '1200',
+                'plan_premium_duration': 'المدة: 15 يوم عمل',
+                'plan_premium_desc_intro': 'مناسب لـ: الشركات اللي عايزة حلول كاملة جاهزة للعرض والتسويق على السوشيال والويب.',
+                'plan_premium_f1': 'كل المزايا في الخطة المتوسطة',
+                'plan_premium_f2': 'موقع كامل للشركة (حتى 10 صفحات)',
+                'plan_premium_f3': 'إدارة سوشيال لمدة شهر كامل (بوستات + ستوري + خطة نشر)',
+
                 // Process
                 'process_title': 'رحلة التصميم: محترفون في بناء العلامات الراقية',
                 'step_1_title': '1. الفكرة والإحاطة',
@@ -484,6 +651,7 @@
                 'nav_home': 'Home',
                 'nav_about': 'About Us',
                 'nav_services': 'Services',
+                'nav_pricing': 'Plans & Pricing',
                 'nav_contact': 'Contact',
                 // CTA
                 'cta_start': 'Start Your Project',
@@ -509,6 +677,48 @@
                 'service_3_desc': 'Designing luxury business cards, company profiles, and brochures that leave a lasting impression.',
                 'service_4_title': 'Digital Presence Management',
                 'service_4_desc': 'Designing mockups and social media graphics to enhance your elegant online presence.',
+                // Pricing (New)
+                'pricing_title': 'Refined Design Packages',
+                'plan_currency': 'EGP',
+                'cta_choose_plan': 'Choose This Plan',
+
+                // General WhatsApp CTA
+                'whatsapp_message_intro': 'Hello FEKRA Studio, I am interested in working on my project and would like to discuss the details of the ',
+
+                // Basic Plan
+                'plan_basic_title': 'Basic Plan',
+                'plan_basic_label': 'Best for Starters',
+                'plan_basic_name': 'Basic Plan', // Key for WhatsApp message
+                'plan_basic_price': '300',
+                'plan_basic_duration': 'Duration: 5 Working Days',
+                'plan_basic_desc_intro': 'Suitable for: Startups or individuals looking for a professional start.',
+                'plan_basic_f1': 'Professional Logo Design (with 3 concepts)',
+                'plan_basic_f2': 'Business Card or ID Card Design',
+                'plan_basic_f3': 'Simple Landing Page',
+                // Standard Plan
+                'plan_standard_title': 'Standard Plan',
+                'plan_standard_label': 'Complete Identity',
+                'plan_popular_badge': 'Most Popular',
+                'plan_standard_name': 'Standard Plan', // Key for WhatsApp message
+                'plan_standard_price': '850',
+                'plan_standard_duration': 'Duration: 10 Working Days',
+                'plan_standard_desc_intro': 'Suitable for: Small to medium businesses needing a complete identity and a functional website.',
+                'plan_standard_f1': 'Logo Design + Full Visual Identity Package',
+                'plan_standard_f2': 'Small Informational Website (4–5 pages)',
+                'plan_standard_f3': '10 Social Media Posts + Content Writing',
+                'plan_standard_f4': 'Marketing Landing Page',
+                // Premium Plan
+                'plan_premium_title': 'Premium Plan',
+                'plan_premium_label': 'Full Solutions',
+                'plan_premium_name': 'Premium Plan', // Key for WhatsApp message
+                'plan_premium_price': '1200',
+                'plan_premium_duration': 'Duration: 15 Working Days',
+                'plan_premium_desc_intro': 'Suitable for: Businesses requiring complete solutions ready for web and social media display and marketing.',
+                'plan_premium_f1': 'All features in the Standard Plan',
+                'plan_premium_f2': 'Full Company Website (up to 10 pages)',
+                'plan_premium_f3': '1-Month Social Media Management (Posts + Stories + Publishing Plan)',
+                'plan_premium_f4': 'Brochure or PDF Company Profile Design',
+
                 // Process
                 'process_title': 'The Design Journey: Professionals in Building High-End Brands',
                 'step_1_title': '1. Idea and Briefing',
@@ -540,6 +750,7 @@
                 'nav_home': 'Accueil',
                 'nav_about': 'À Propos',
                 'nav_services': 'Services',
+                'nav_pricing': 'Plans et Tarifs',
                 'nav_contact': 'Contact',
                 // CTA
                 'cta_start': 'Démarrer Votre Projet',
@@ -565,10 +776,50 @@
                 'service_3_desc': 'Conception de cartes de visite de luxe, de profils d\'entreprise et de brochures qui laissent une impression durable.',
                 'service_4_title': 'Gestion de la Présence Numérique',
                 'service_4_desc': 'Conception de maquettes et de graphiques pour les médias sociaux afin d\'améliorer votre présence en ligne élégante.',
+                // Pricing (New)
+                'pricing_title': 'Forfaits de Design Raffiné',
+                'plan_currency': 'EGP',
+                'cta_choose_plan': 'Choisir Ce Forfait',
+
+                // General WhatsApp CTA
+                'whatsapp_message_intro': 'Bonjour FEKRA Studio, je suis intéressé à travailler sur mon projet et je voudrais discuter les détails du ',
+
+                // Basic Plan
+                'plan_basic_title': 'Forfait Basique',
+                'plan_basic_label': 'Idéal pour Commencer',
+                'plan_basic_name': 'Forfait Basique', // Key for WhatsApp message
+                'plan_basic_price': '300',
+                'plan_basic_duration': 'Durée: 5 Jours Ouvrables',
+                'plan_basic_desc_intro': 'Convient aux: Startups ou aux individus souhaitant un départ professionnel.',
+                'plan_basic_f1': 'Conception de Logo Professionnel (avec 3 propositions)',
+                'plan_basic_f2': 'Carte de Visite ou Carte d\'Identité',
+                'plan_basic_f3': 'Page de Destination Simple (Landing Page)',
+                // Standard Plan
+                'plan_standard_title': 'Forfait Standard',
+                'plan_standard_label': 'Identité Complète',
+                'plan_popular_badge': 'Le Plus Populaire',
+                'plan_standard_name': 'Forfait Standard', // Key for WhatsApp message
+                'plan_standard_price': '850',
+                'plan_standard_duration': 'Durée: 10 Jours Ouvrables',
+                'plan_standard_desc_intro': 'Convient aux: Petites et moyennes entreprises ayant besoin d\'une identité complète et d\'un site web fonctionnel.',
+                'plan_standard_f1': 'Conception de Logo + Pack d\'Identité Visuelle Complète',
+                'plan_standard_f2': 'Petit Site Web de Présentation (4–5 pages)',
+                'plan_standard_f3': '10 Publications Sociales + Rédaction de Contenu',
+                'plan_standard_f4': 'Page de Destination Marketing (Landing Page)',
+                // Premium Plan
+                'plan_premium_title': 'Forfait Premium',
+                'plan_premium_label': 'Solutions Complètes',
+                'plan_premium_name': 'Forfait Premium', // Key for WhatsApp message
+                'plan_premium_price': '1200',
+                'plan_premium_duration': 'Durée: 15 Jours Ouvrables',
+                'plan_premium_desc_intro': 'Convient aux: Entreprises nécessitant des solutions complètes prêtes pour l\'affichage et le marketing web et sur les réseaux sociaux.',
+                'plan_premium_f1': 'Toutes les fonctionnalités du Forfait Standard',
+                'plan_premium_f2': 'Site Web Complet de l\'Entreprise (jusqu\'à 10 pages)',
+                'plan_premium_f3': 'Gestion des Réseaux Sociaux d\'un Mois Entier (Publications + Histoires + Plan de Publication)',
                 // Process
                 'process_title': 'Le Parcours de Conception: Professionnels de la Construction de Marques Haut de Gamme',
                 'step_1_title': '1. Idée et Briefing',
-                'step_1_desc': 'Nous commençons par une écoute approfondية de votre idée, analysant le marché et les concurrents pour définir l\'excellence.',
+                'step_1_desc': 'Nous commençons par une écoute approfondie de votre idée, analysant le marché et les concurrentين لتحديد التميز.',
                 'step_2_title': '2. Visualisation et Structuration',
                 'step_2_desc': 'Établissement des concepts initiaux et rédaction des maquettes (Wireframes) pour garantir la meilleure expérience utilisateur.',
                 'step_3_title': '3. Design Visuel',
@@ -576,7 +827,7 @@
                 'step_4_title': '4. Mise en Œuvre et Développement',
                 'step_4_desc': 'Conversion du design en code propre et réactif, optimisé pour la performance (développement de sites web).',
                 'step_5_title': '5. Livraison et Lancement',
-                'step_5_desc': 'Tests completس، lancement du projet et support technique pour assurer le succès de votre marque.',
+                'step_5_desc': 'Tests complets، lancement du projet et support technique pour assurer le succès de votre marque.',
                 // Contact
                 'contact_title': 'Vous Avez un Projet? Commençons!',
                 'contact_intro': 'Contactez-nous maintenant via WhatsApp ou email. Nous vous promettons une réponse rapide et une discussion détaillée de votre idée.',
@@ -593,6 +844,28 @@
         };
 
         let currentLang = 'ar';
+        const WHATSAPP_NUMBER = '201279929897'; // رقم الواتساب
+
+        // دالة جديدة لإنشاء رسالة الواتساب وفتحها
+        window.sendWhatsAppMessage = function(planKey) {
+            const planNames = {
+                'basic': translations[currentLang].plan_basic_name,
+                'standard': translations[currentLang].plan_standard_name,
+                'premium': translations[currentLang].plan_premium_name,
+            };
+
+            const planName = planNames[planKey] || 'خطة غير محددة';
+            const introMessage = translations[currentLang].whatsapp_message_intro;
+            
+            let message = introMessage + planName + '.';
+
+            // تشفير الرسالة لعنوان URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        };
+
 
         // 1. إعداد العام (السنة الحالية)
         document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -755,8 +1028,8 @@
             });
         });
 
-        // 9. أنيميشن Hover على بطاقات الخدمات
-        document.querySelectorAll('.service-card').forEach(card => {
+        // 9. أنيميشن Hover على بطاقات الخدمات والخطط
+        document.querySelectorAll('.service-card, .pricing-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 gsap.to(card, { scale: 1.03, duration: 0.3, ease: "power1.out" });
             });
